@@ -1,10 +1,10 @@
 resource "google_cloudbuild_trigger" "ci" {
-  name        = "dbt-ci-trigger"
-  description = "Trigger for dbt CI pipeline"
-  disabled    = false
-  #   include_build_logs = "INCLUDE_BUILD_LOGS_WITH_STATUS"
-  service_account = google_service_account.default.email
-  location = var.region
+  name               = "dbt-ci-trigger"
+  description        = "Trigger for dbt CI pipeline"
+  disabled           = false
+  include_build_logs = "INCLUDE_BUILD_LOGS_WITH_STATUS"
+  service_account    = google_service_account.default.id
+  location           = var.region
   github {
     owner = var.github_owner
     name  = var.github_repo
@@ -16,5 +16,5 @@ resource "google_cloudbuild_trigger" "ci" {
   substitutions = {
     _ARTIFACT_REGISTRY_URL = "${var.region}-docker.pkg.dev/${var.project}/${google_artifact_registry_repository.default.name}"
   }
-  filename = "cloud_build/ci.cloudbuild.yaml"
+  filename = "ci.cloudbuild.yaml"
 }
