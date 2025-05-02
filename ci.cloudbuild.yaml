@@ -19,7 +19,18 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     id: 'Push Docker image to Artifact Registry'
     args: ['push', '$_IMAGE']
-
+  
+  - name: 'gcr.io/cloud-builders/gcloud'
+    id: 'Trigger CD pipeline'
+    args: [
+      'builds',
+      'triggers',
+      'run',
+      'dbt-cd-trigger-test',
+      '--branch', '$_BRANCH_NAME',
+      '--project', '$_PROJECT_ID'
+    ]
+      
 options:
   logging: CLOUD_LOGGING_ONLY
 
