@@ -1,0 +1,13 @@
+dbt_cloud_run_hw:
+  outputs:
+    sdx:
+      dataset: "{{ env_var('DBT_DATASET') }}"
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: EU
+      method: oauth
+      priority: interactive
+      project: football-analytics-dev-001
+      threads: 4
+      type: bigquery
+  target: sdx
