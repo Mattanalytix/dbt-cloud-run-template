@@ -1,5 +1,4 @@
 substitutions:
-  _REGION: ${_REGION}
   _IMAGE: "${_ARTIFACT_REGISTRY_URL}/dbt_app:${COMMIT_SHA}" 
 
 steps:
