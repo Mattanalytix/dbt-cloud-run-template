@@ -8,3 +8,9 @@ resource "google_project_iam_member" "artifactregistry_writer" {
   role    = "roles/artifactregistry.writer"
   member  = "serviceAccount:${google_service_account.default.email}"
 }
+
+resource "google_project_iam_member" "log_writer" {
+  project = var.project
+  role    = "roles/logging.logWriter"
+  member  = "serviceAccount:${google_service_account.default.email}"
+}
