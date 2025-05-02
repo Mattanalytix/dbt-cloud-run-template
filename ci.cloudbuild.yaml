@@ -28,7 +28,8 @@ steps:
       'run',
       'dbt-cd-trigger-test',
       '--branch', 'feature/terraform-module',
-      '--region', 'europe-west2'
+      '--region', 'europe-west2',
+      '--substitutions', '_IMAGE=${_IMAGE}'
     ]
       
 options:
