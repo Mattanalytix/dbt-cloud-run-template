@@ -1,0 +1,10 @@
+resource "google_service_account" "default" {
+  account_id   = "dbt-ci"
+  display_name = "DBT CI Service Account"
+}
+
+resource "google_project_iam_member" "artifactregistry_writer" {
+  project = var.project
+  role    = "roles/artifactregistry.writer"
+  member  = "serviceAccount:${google_service_account.default.email}"
+}
