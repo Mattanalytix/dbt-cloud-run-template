@@ -1,5 +1,5 @@
 substitutions:
-  _IMAGE: "${_ARTIFACT_REGISTRY_URL}/dbt_app:${COMMIT_SHA}" 
+  _IMAGE: "${_REGION}-docker.pkg.dev/${_ARTIFACT_REGISTRY_URL}/dbt_app:${COMMIT_SHA}" 
 
 steps:
   - name: 'alpine'
