@@ -2,6 +2,16 @@ substitutions:
   _IMAGE: "${_ARTIFACT_REGISTRY_URL}/dbt_app:${COMMIT_SHA}" 
 
 steps:
+  - name: 'alpine'
+    id: 'image name'
+    entrypoint: 'sh'  
+    args: 
+    - '-c'
+    - | 
+        echo "***********************"
+        echo "$_IMAGE"
+        echo "***********************"
+
   - name: 'gcr.io/cloud-builders/docker'
     id: 'Build Docker image'
     args: ['build', '-t', '$_IMAGE', '.']
