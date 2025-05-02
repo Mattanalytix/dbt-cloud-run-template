@@ -27,7 +27,7 @@ steps:
       'triggers',
       'run',
       'dbt-cd-trigger-test',
-      '--branch', '$_BRANCH_NAME',
+      '--branch', 'faeture/terraform-module',
       '--region', 'europe-west2'
     ]
       
