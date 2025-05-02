@@ -27,7 +27,8 @@ steps:
       'triggers',
       'run',
       'dbt-cd-trigger-test',
-      '--branch', '$_BRANCH_NAME'
+      '--branch', '$_BRANCH_NAME',
+      '--region', 'europe-west2'
     ]
       
 options:
