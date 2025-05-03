@@ -14,3 +14,15 @@ resource "google_project_iam_member" "log_writer" {
   role    = "roles/logging.logWriter"
   member  = "serviceAccount:${google_service_account.default.email}"
 }
+
+resource "google_project_iam_member" "cloudbuild_editor" {
+  project = var.project
+  role    = "roles/cloudbuild.builds.editor"
+  member  = "serviceAccount:${google_service_account.default.email}"
+}
+
+resource "google_project_iam_member" "service_account_user" {
+  project = var.project
+  role    = "roles/iam.serviceAccountUser"
+  member  = "serviceAccount:${google_service_account.default.email}"
+}

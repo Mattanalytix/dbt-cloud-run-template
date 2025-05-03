@@ -16,6 +16,13 @@ gcloud auth application-default login
 gcloud config set project <your-project-id>
 ```
 
+Set env variables for BigQuery:
+
+```cmd
+export DBT_DATASET=<your-dataset>
+export DBT_PROJECT=<your-project-id>
+```
+
 ### Resources:
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
 - Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers

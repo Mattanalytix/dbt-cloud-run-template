@@ -7,7 +7,7 @@ dbt_cloud_run_hw:
       location: EU
       method: oauth
       priority: interactive
-      project: football-analytics-dev-001
+      project: "{{ env_var('DBT_PROJECT') }}"
       threads: 4
       type: bigquery
   target: sdx

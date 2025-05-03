@@ -15,7 +15,7 @@ DBT_ARTIFACTS = [
     "catalog.json",
     "semantic_manifest.json",
     "sources.json",
-    "index.html",
+    "static_index.html",
 ]
 
 DEFAULT_DBT_DIR = "dbt"
