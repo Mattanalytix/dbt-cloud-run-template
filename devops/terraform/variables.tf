@@ -13,6 +13,16 @@ variable "github_repo" {
   type        = string
 }
 
+variable "dbt_image" {
+  description = "The Docker image to use for the DBT job"
+  type        = string
+}
+
+variable "dbt_command" {
+  description = "The DBT command(s) to execute (separated by ||)"
+  type        = string
+}
+
 variable "location" {
   description = "The GCP location for the resources"
   type        = string
@@ -29,6 +39,18 @@ variable "environment" {
   description = "The environment for the deployment (e.g., dev, staging, prod)"
   type        = string
   default     = "prod"
+}
+
+variable "dbt_dir" {
+  description = "The directory containing the DBT project"
+  type        = string
+  default     = "dbt"
+}
+
+variable "artifact_prefix" {
+  description = "The prefix for GCS artifact storage"
+  type        = string
+  default     = "dbt-artifacts"
 }
 
 variable "is_bucket_public" {
