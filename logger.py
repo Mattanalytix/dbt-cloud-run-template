@@ -4,11 +4,12 @@ from functools import wraps
 from dotenv import load_dotenv
 
 # Cloud Logging imports
-from google.cloud import logging as cloud_logging
 from google.cloud.logging_v2.handlers import StructuredLogHandler
 
+
 def with_logging(main_func):
-    """Decorator to set up logging based on environment and ensure logs are flushed on exit."""
+    """Decorator to set up logging based on environment and ensure logs are
+    flushed on exit."""
     @wraps(main_func)
     def wrapper(*args, **kwargs):
         # Load env vars from .env in local dev
